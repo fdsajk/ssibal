@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>회원탈퇴</title>
+   <meta charset="utf-8" />
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+      }
+
+      .container {
+         max-width: 400px;
+         margin: 0 auto;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+         margin-bottom: 20px;
+      }
+
+      .form-group label {
+         display: block;
+         margin-bottom: 5px;
+         color: #333;
+         font-weight: bold;
+      }
+
+      .form-group input[type="checkbox"] {
+         margin-right: 5px;
+      }
+
+      .form-group .notice {
+         font-size: 12px;
+         color: #666;
+         line-height: 1.2;
+         margin-bottom: 15px;
+      }
+
+      .button-group {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .button-group button {
+         width: 48%;
+         padding: 12px;
+         font-size: 16px;
+         color: #fff;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
+
+      .button-group button.confirm-btn {
+         background-color: #ff0066;
+      }
+
+      .button-group button.confirm-btn:hover {
+         background-color: #ff80bf;
+      }
+
+      .button-group button.cancel-btn {
+         background-color: #fff;
+         color: #000;
+      }
+
+      .button-group button.cancel-btn:hover {
+         background-color: #ccc;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <h2>회원탈퇴</h2>
+      <div class="form-group">
+         <label for="notice">주의사항</label>
+         <p class="notice">
+            즉시 탈퇴 처리 및 기존 아이디 사용 불가 회원 탈퇴 시, 즉시 탈퇴 처리되며 기존에 가입하셨던 아이디로 재가입(재사용)이 불가능합니다.<br>
+            탈퇴 후 7일 이내 재가입 불가 및 정보보관 회원 탈퇴 후 7일간 이메일 주소를 포함한 개인정보가 저장되며 동일 정보로 사이트 가입이 불가능합니다.
+         </p>
+      </div>
+      <div class="form-group">
+         <label>
+            <input type="checkbox" id="confirmation" required>
+            상기 사항을 확인하였습니다.
+         </label>
+      </div>
+      <div class="button-group">
+         <button type="submit" class="confirm-btn" onclick="withdraw()">탈퇴</button>
+         <button type="button" class="cancel-btn" onclick="window.history.back()">취소</button>
+      </div>
+   </div>
+
+   <script>
+      function withdraw() {
+         var confirmation = document.getElementById("confirmation").checked;
+
+         if (confirmation) {
+            // 탈퇴 처리 로직을 여기에 추가하세요
+            console.log("회원탈퇴가 정상적으로 처리되었습니다.");
+            // 탈퇴 처리 후 홈페이지 또는 로그인 페이지로 이동하도록 설정하세요
+            window.location.href = "index.html";
+         } else {
+            alert("주의사항을 확인하고 체크해주세요.");
+         }
+      }
+   </script>
+</body>
+</html>
